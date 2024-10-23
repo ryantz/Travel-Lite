@@ -9,18 +9,18 @@ React and Springboot used.
 
 ### Front end (React)
 
-[x] landing page
-[x] log in sign up pages
-[] Home page
-[] Booking page
-[] Seat selection page
-[] Checkout page
+- [x] landing page
+- [x] log in sign up pages
+- [] Home page
+- [] Booking page
+- [] Seat selection page
+- [] Checkout page
 
 ### Back end (SpringBoot)
 
-[] HTTP methods (user, company, user priviledges)
-[] choose a db type
-[] tying it to frontend
+- [] HTTP methods (user, company, user priviledges)
+- [] choose a db type
+- [] tying it to frontend
 
 # How to run
 
