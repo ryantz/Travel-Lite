@@ -1,0 +1,32 @@
+.userbtn-wrap {
+    margin-top: 5px;
+    position: absolute;
+    right: 0;
+    width: 15%;
+    margin-right: 35px;
+}
+
+.userbtn-wrap .userbtn {
+    width: 100%;
+    border: 0;
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-family: var(--font-fam);
+    padding: 20px;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.userbtn img {
+    width: 15%;
+    height: 50%;
+    position: absolute;
+    bottom: 14px;
+    left: 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.userbtn:hover {
+    background-color: blue;
+}

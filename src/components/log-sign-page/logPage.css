@@ -1,0 +1,95 @@
+.logpage-wrap {
+    width: 25%;
+    height: 70%;
+    border: solid 5px #757575;
+    border-radius: 25px;
+    background-color: #000000;
+    font-family: var(--font-fam);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logpage-wrap .logpage-toprow {
+    width: 100%;
+    height: 14%;
+}
+
+.logpage-toprow button {
+    height: 35%;
+    width: 6%;
+    padding: 0;
+    float: right;
+    margin-top: 3%;
+    margin-right: 5%;
+    border: 0;
+}
+
+button img {
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+img:hover {
+    background-color: #757575;
+}
+
+img:active {
+    border: 2px solid #ff0000;
+}
+
+.logpage-greeting {
+    font-weight: bold;
+    font-size: 1.8em;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 5%;
+    margin-bottom: 20%;
+}
+
+.logpage-wrap .logpage-input-area {
+    width: 80%;
+    height: 60%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20%;
+}
+
+.logpage-input-area .logpage-userpass {
+    margin-left: 10%;
+    width: 80%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 40%;
+}
+
+.logpage-input-area .logpage-submit {
+    width: 50%;
+    height: 35%;
+    margin-top: 3%;
+    margin-left: 25%;
+    border: 0;
+    border-radius: 20px;
+    background-color: #757575;
+    font-size: 1.2em;
+}
+
+.logpage-submit:hover {
+    background-color: #14ae5c;
+}
+
+.logpage-submit:active {
+    border: solid 2px #ffffff;
+    color: #ffffff;
+}
+
+.logpage-userpass .logpage-input {
+    border-radius: 20px;
+    padding-left: 15px;
+    font-size: 1.1em;
+}

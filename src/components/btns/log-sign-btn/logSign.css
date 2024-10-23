@@ -1,0 +1,37 @@
+.logsign-wrap {
+    margin-top: 5px;
+    position: absolute;
+    right: 0;
+    width: 15%;
+}
+
+.logsign-btns {
+    width: 40%;
+    border: 0;
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-family: var(--font-fam);
+    padding: 10px;
+    font-weight: bold;
+}
+
+#sign-btn {
+    background-color: #ffffff;
+    margin-right: 10px;
+}
+
+#log-btn {
+    background-color: #757575;
+    color: #ffffff;
+}
+
+#sign-btn:hover,
+#log-btn:hover {
+    background-color: #14ae5c;
+    color: #000000;
+}
+
+#sign-btn:active,
+#log-btn:active {
+    border: 2px solid #000000;
+}

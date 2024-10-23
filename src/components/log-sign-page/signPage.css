@@ -1,0 +1,96 @@
+.signpage-wrap {
+    width: 25%;
+    height: 80%;
+    border: solid 5px #757575;
+    border-radius: 25px;
+    background-color: #000000;
+    font-family: var(--font-fam);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signpage-wrap .signpage-toprow {
+    width: 100%;
+    height: 14%;
+}
+
+.signpage-toprow button {
+    height: 30%;
+    width: 6%;
+    padding: 0;
+    float: right;
+    margin-top: 3%;
+    margin-right: 5%;
+    border: 0;
+}
+
+button img {
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+img:hover {
+    background-color: #757575;
+}
+
+img:active {
+    border: 2px solid #ff0000;
+}
+
+.signpage-greeting {
+    font-weight: bold;
+    font-size: 1.8em;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 10%;
+}
+
+.signpage-wrap .signpage-input-area {
+    width: 80%;
+    height: 70%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 30%;
+}
+
+.signpage-input-area .signpage-userpass {
+    margin-left: 10%;
+    width: 80%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 25%;
+}
+
+.signpage-input-area .signpage-submit {
+    width: 50%;
+    height: 30%;
+    margin-top: 7%;
+    margin-left: 25%;
+    border: 0;
+    border-radius: 20px;
+    background-color: #ffffff;
+    font-size: 1.2em;
+}
+
+.signpage-submit:hover {
+    background-color: #14ae5c;
+}
+
+.signpage-submit:active {
+    border: solid 2px #ffffff;
+    color: #ffffff;
+}
+
+.signpage-userpass .signpage-input {
+    border-radius: 20px;
+    padding-left: 15px;
+    height: 35px;
+    font-size: 1.1em;
+}

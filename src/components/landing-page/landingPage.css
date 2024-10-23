@@ -1,0 +1,44 @@
+.landingpage-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10%;
+    font-family: var(--font-fam);
+    margin-top: 150px;
+    margin-left: 50px;
+}
+
+.landingpage-wrap .landingpage-who,
+.landingpage-wrap .landingpage-when,
+.landingpage-wrap .landingpage-where {
+    width: 30%;
+}
+
+#who,
+#when,
+#when2,
+#where,
+#where2 {
+    margin-top: 20px;
+    width: 70%;
+    height: 10%;
+    border-radius: 30px;
+    border: 0;
+    padding-left: 30px;
+    font-size: 1.3em;
+}
+
+label {
+    margin-left: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.trip-type {
+    width: 35%;
+    margin-left: 70px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: #ffffff;
+}

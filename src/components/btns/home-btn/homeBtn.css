@@ -1,0 +1,21 @@
+.home {
+    margin-left: 20px;
+    border: 0;
+    border-radius: 20px;
+    width: 10%;
+    background-color: #000000;
+    padding: 15px;
+    color: white;
+    position: absolute;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: var(--font-fam);
+}
+
+.home:hover {
+    background-color: #757575;
+}
+
+.home:active {
+    border: 2px solid #000000;
+}
