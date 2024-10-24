@@ -11,15 +11,15 @@ React and Springboot used.
 
 - [x] landing page
 - [x] log in sign up pages
-- [] Home page
-- [] Booking page
-- [] Seat selection page
+- [x] Home page
+- [x] Booking page
+- [x] Seat selection page
 - [] Checkout page
 
 ### Back end (SpringBoot)
 
 - [] HTTP methods (user, company, user priviledges)
-- [] choose a db type
+- [x] choose a db type (mySQL, sqlite was insane to try to use with Springboot)
 - [] tying it to frontend
 
 # How to run
