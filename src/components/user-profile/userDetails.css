@@ -1,0 +1,53 @@
+.up-names {
+    display: flex;
+    gap: 10%;
+    height: 50%;
+}
+
+.up-names .names {
+    border-radius: 20px;
+    padding-left: 3%;
+}
+
+.up-minfo .more-info {
+    border-radius: 20px;
+    padding-left: 3%;
+}
+
+.up-pinfo .pass-info {
+    border-radius: 20px;
+    padding-left: 3%;
+}
+
+.up-minfo {
+    display: flex;
+    height: 50%;
+    gap: 3%;
+}
+
+.up-minfo #minfo-dob {
+    width: 25%;
+}
+
+.up-minfo #minfo-gender {
+    width: 13%;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+.up-minfo #minfo-nation {
+    width: 40%;
+}
+
+.up-pinfo {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10%;
+    height: 200%;
+}
+
+.up-pinfo .pass-info {
+    width: 50%;
+}

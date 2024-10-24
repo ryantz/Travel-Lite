@@ -1,0 +1,28 @@
+.minisr-wrap {
+    background-color: #000000;
+    width: 90%;
+    height: 90%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+
+.minisr-wrap .minisrelements {
+    background-color: #757575;
+    border-radius: 25px;
+    height: 80%;
+}
+
+#minisr-company {
+    width: 19%;
+}
+
+#minisr-details {
+    width: 40%;
+}
+
+#minisr-price {
+    width: 25%;
+}

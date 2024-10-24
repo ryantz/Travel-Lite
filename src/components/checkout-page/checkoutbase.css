@@ -1,0 +1,39 @@
+.cobase-top {
+    display: flex;
+    height: 20%;
+    margin-top: 3%;
+    justify-content: center;
+}
+
+.cobase-top .cobase-backwrap {
+    padding-top: 3%;
+    width: 8%;
+}
+
+.cobase-top .cobase-sr {
+    width: 92%;
+}
+
+.cobase-back {
+    width: 50%;
+    border: 1px solid black;
+    font-weight: bold;
+    height: 30%;
+}
+
+.cobase-back:active {
+    background-color: #ff0000;
+    color: #000000;
+}
+
+.cobase-main {
+    height: 75%;
+}
+
+.cobase-main .cobase-comainarea {
+    margin-left: 8%;
+    border-radius: 30px;
+    background-color: #000000;
+    height: 100%;
+    width: 82.9%;
+}

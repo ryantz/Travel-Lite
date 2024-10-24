@@ -1,0 +1,28 @@
+.e-seatwrap {
+    display: flex;
+    height: 70%;
+    width: 70%;
+    gap: 10px;
+}
+
+.e-seats {
+    width: 100%;
+    height: 40%;
+}
+
+.e-seats:hover {
+    background-color: #14ae5c;
+    border: 2px solid #14ae5c;
+}
+
+.e-seats:focus {
+    border: 2px solid #ff0000;
+    background-color: #14ae5c;
+}
+
+.e-seat-wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 25px;
+    margin-left: 20px;
+}

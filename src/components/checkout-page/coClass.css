@@ -1,0 +1,43 @@
+#coc-title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-top: 20px;
+    padding-left: 3%;
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+
+.coc-container {
+    display: flex;
+    gap: 3%;
+    width: 100%;
+    height: 70%;
+    justify-content: center;
+}
+
+.coc-submit {
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.coc-submit .coc-proceed {
+    border: 0;
+    width: 15%;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #757575;
+    color: #ffffff;
+}
+
+.coc-proceed:hover {
+    background-color: #606060;
+}
+
+.coc-proceed:active {
+    background-color: #14ae5c;
+    color: #000000;
+}

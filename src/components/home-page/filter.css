@@ -1,0 +1,9 @@
+.filter-wrap {
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    border-radius: 25px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}

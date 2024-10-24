@@ -1,0 +1,77 @@
+.minilanding-wrap {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-fam);
+}
+
+.minilanding-input-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.minilanding-wrap .minilanding-who,
+.minilanding-wrap .minilanding-when,
+.minilanding-wrap .minilanding-where {
+    width: 20%;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+.minilanding-input {
+    margin-top: 5px;
+    width: 70%;
+    height: 40%;
+    border-radius: 30px;
+    border: 0;
+    padding-left: 30px;
+    font-size: 0.9em;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+label {
+    margin-left: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.mini-trip-type {
+    font-size: 0.9em;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.mini-trip-type:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.minilanding-submit-wrap {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10%;
+}
+
+.minilanding-submit {
+    border: 0;
+    border-radius: 10px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 0.9em;
+    padding: 10px;
+}
+
+.minilanding-submit:hover {
+    background-color: #14ae5c;
+}
+
+.minilanding-submit:active {
+    color: red;
+}

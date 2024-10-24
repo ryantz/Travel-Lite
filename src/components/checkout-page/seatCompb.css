@@ -1,0 +1,31 @@
+.b-seat-wrapper {
+    width: 50%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 30px;
+}
+
+.b-seatwrap {
+    display: flex;
+    gap: 13px;
+}
+
+.b-seatwrap-b {
+    display: flex;
+    gap: 13px;
+}
+
+.b-seats {
+    width: 100%;
+    height: 39%;
+}
+
+.b-seats:hover {
+    background-color: #14ae5c;
+    border: 2px solid #14ae5c;
+}
+
+.b-seats:focus {
+    border: 2px solid #ff0000;
+    background-color: #14ae5c;
+}

@@ -1,0 +1,44 @@
+#coud-title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-top: 20px;
+    padding-left: 3%;
+    margin-top: 0;
+}
+
+.coud-container {
+    padding-left: 3%;
+    padding-top: 2.5%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 60%;
+    height: 45%;
+}
+
+.coud-submit {
+    margin-top: 4%;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.coud-submit .coud-proceed {
+    border: 0;
+    width: 15%;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #757575;
+    color: #ffffff;
+}
+
+.coud-proceed:hover {
+    background-color: #606060;
+}
+
+.coud-proceed:active {
+    background-color: #14ae5c;
+    color: #000000;
+}

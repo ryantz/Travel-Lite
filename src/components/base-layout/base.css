@@ -1,11 +1,14 @@
+* {
+    font-family: var(--font-fam);
+}
+
 .base-top-row {
-    height: 9%;
+    height: 5%;
     padding: 5px;
     margin-top: 10px;
 }
 
 .base-middle-field {
-    height: 60%;
-    padding: 5px;
-    margin-top: 5%;
+    height: 87%;
+    padding: 0;
 }

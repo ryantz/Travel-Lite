@@ -1,0 +1,51 @@
+.sr-wrap {
+    background-color: #000000;
+    width: 98%;
+    height: 90%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+
+.sr-wrap .srelements {
+    background-color: #757575;
+    border-radius: 25px;
+    height: 80%;
+}
+
+#sr-company {
+    width: 20%;
+}
+
+#sr-details {
+    width: 50%;
+}
+
+#sr-price {
+    width: 15%;
+}
+
+#sr-choose {
+    width: 5%;
+    height: 10%;
+    background-color: transparent;
+}
+
+#sr-choose #choosebtn {
+    border: 0;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+}
+
+#choosebtn:hover {
+    color: white;
+    font-weight: bold;
+    background-color: #14ae5c;
+}
+
+#choosebtn:active {
+    color: green;
+}

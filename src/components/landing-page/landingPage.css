@@ -1,11 +1,14 @@
 .landingpage-wrap {
     width: 100%;
     height: 100%;
-    display: flex;
-    gap: 10%;
     font-family: var(--font-fam);
     margin-top: 150px;
     margin-left: 50px;
+}
+
+.landingpage-input-wrap {
+    display: flex;
+    gap: 10%;
 }
 
 .landingpage-wrap .landingpage-who,
@@ -14,18 +17,20 @@
     width: 30%;
 }
 
-#who,
-#when,
-#when2,
-#where,
-#where2 {
+option[value=""][disabled] {
+    display: none;
+}
+
+.landingpage-input {
     margin-top: 20px;
     width: 70%;
-    height: 10%;
+    height: 40%;
     border-radius: 30px;
     border: 0;
     padding-left: 30px;
     font-size: 1.3em;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 label {
@@ -34,11 +39,45 @@ label {
     font-weight: bold;
 }
 
+.triptype-wrap {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .trip-type {
-    width: 35%;
-    margin-left: 70px;
+    width: 10%;
+    font-size: 1.3em;
     padding: 0;
-    border: 0;
+    border: 2px solid #000000;
     border-radius: 10px;
     background-color: #ffffff;
+    margin-bottom: 20px;
+    margin-right: 130px;
+}
+
+.trip-type:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.landingpage-submit {
+    margin-left: 37%;
+    margin-top: 10%;
+    height: 13%;
+    width: 20%;
+    border: 0;
+    border-radius: 30px;
+    background-color: black;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.landingpage-submit:hover {
+    background-color: #14ae5c;
+}
+
+.landingpage-submit:active {
+    border: 3px solid #000000;
 }
