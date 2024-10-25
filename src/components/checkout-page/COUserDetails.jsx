@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { PageContext } from "../../Context/PageContext";
+import { ComponentContext } from "../../Context/ComponentContext";
 import UserDetails from "../user-profile/UserDetails";
 import "./coUserDetails.css";
 
 const COUserDetails = () => {
-  const { goTo } = useContext(PageContext);
+  const { goToCmpnt } = useContext(ComponentContext);
   return (
     <>
       <p id="coud-title">Who?</p>
@@ -12,7 +12,10 @@ const COUserDetails = () => {
         <UserDetails />
       </div>
       <div className="coud-submit">
-        <button className="coud-proceed" onClick={() => goTo("class")}>
+        <button
+          className="coud-proceed"
+          onClick={() => goToCmpnt("classSelect")}
+        >
           Proceed
         </button>
       </div>

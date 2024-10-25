@@ -5,9 +5,8 @@ import COUserDetails from "./COUserDetails";
 import COClass from "./COClass";
 import COSeat from "./COSeat";
 import COPay from "./COPay";
-import { PageContext } from "../../Context/PageContext";
 
-const CheckoutBase = () => {
+const CheckoutBase = ({ children }) => {
   return (
     <>
       <div className="cobase-top">
@@ -19,9 +18,7 @@ const CheckoutBase = () => {
         </div>
       </div>
       <div className="cobase-main">
-        <div className="cobase-comainarea">
-          <COUserDetails />
-        </div>
+        <div className="cobase-comainarea">{children}</div>
       </div>
     </>
   );

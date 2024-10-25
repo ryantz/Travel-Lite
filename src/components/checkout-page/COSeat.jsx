@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ComponentContext } from "../../Context/ComponentContext";
 import "./coSeat.css";
 import SeatCompb from "./SeatCompb";
 import SeatCompe from "./SeatCompe";
 const COSeat = () => {
+    const { goToCmpnt } = useContext(ComponentContext);
     return (
         <>
             <p id="cos-title">Seats?</p>
@@ -19,7 +21,9 @@ const COSeat = () => {
                 </div>
             </div>
             <div className="cos-submit">
-                <button className="cos-proceed">Proceed</button>
+                <button className="cos-proceed" onClick={() => goToCmpnt("payment")}>
+                    Proceed
+                </button>
             </div>
         </>
     );

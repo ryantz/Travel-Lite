@@ -7,7 +7,6 @@ import "./homePage.css";
 import ResultDisplay from "./ResultDisplay";
 
 const HomePage = () => {
-  const { goTo } = useContext(PageContext);
   return (
     <>
       <div className="homepage-wrap">
