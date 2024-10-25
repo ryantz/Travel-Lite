@@ -14,7 +14,8 @@ React and Springboot used.
 - [x] Home page
 - [x] Booking page
 - [x] Seat selection page
-- [] Checkout page
+- [x] Checkout page
+- [] add Hooks
 
 ### Back end (SpringBoot)
 
