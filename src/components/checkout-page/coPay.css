@@ -1,0 +1,162 @@
+#copay-title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-top: 20px;
+    padding-left: 3%;
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+
+.copay-infowrap {
+    display: flex;
+    gap: 5%;
+    height: 70%;
+}
+
+.copay-card {
+    margin-top: 5%;
+    margin-left: 3%;
+    width: 50%;
+    height: 60%;
+    display: grid;
+}
+
+.copay-card img {
+    width: 40%;
+    height: 70%;
+}
+
+.name-number {
+    width: 80%;
+    height: 50%;
+    border-radius: 15px;
+    padding-left: 15px;
+    font-size: 1.2em;
+}
+
+.ex-cvv {
+    display: flex;
+    gap: 10%;
+    width: 80%;
+    height: 50%;
+}
+
+.ex {
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+    padding-left: 15px;
+    font-size: 1.2em;
+}
+
+.cvv {
+    width: 20%;
+    height: 100%;
+    border-radius: 15px;
+    padding-left: 15px;
+    font-size: 1.2em;
+}
+
+.copay-summary {
+    width: 35%;
+    background-color: #757575;
+    border: 2px dotted #ffffff;
+    border-radius: 20px;
+    color: #000000;
+    height: 110%;
+}
+
+.copay-summary .sum-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.payment-wrap {
+    margin-right: 10%;
+    display: grid;
+}
+
+.price-breakdown {
+    margin-top: 10%;
+}
+
+.price-breakdown p {
+    text-align: right;
+    font-size: 1.3em;
+}
+
+.final-price {
+    margin-top: 5%;
+    text-align: right;
+    font-size: 1.8em;
+    font-weight: bolder;
+}
+
+.promo-area {
+    margin-left: 15%;
+    width: 70%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+}
+
+.copromo {
+    height: 95%;
+    width: 60%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    padding-left: 5%;
+    border: 0;
+    outline: none;
+}
+
+.promosubmit {
+    border: 0;
+    background-color: #ffffff;
+    width: 40%;
+    height: 100%;
+    padding: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: -20px;
+    border-bottom-left-radius: -20px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.promosubmit:hover {
+    background-color: #14ae5c;
+}
+
+.promosubmit:active {
+    background-color: #14ae5c;
+    color: #ffffff;
+}
+
+.cop-submit {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cop-submit .cop-proceed {
+    border: 0;
+    width: 30%;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.4em;
+    background-color: #757575;
+    color: #ffffff;
+}
+
+.cop-proceed:hover {
+    background-color: #606060;
+}
+
+.cop-proceed:active {
+    background-color: #14ae5c;
+    color: #000000;
+}

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PageContext } from "../../Context/PageContext";
 import LandingPage from "../landing-page/LandingPage";
 import MiniLanding from "../landing-page/MiniLanding";
 import Filter from "./Filter";
@@ -6,6 +7,7 @@ import "./homePage.css";
 import ResultDisplay from "./ResultDisplay";
 
 const HomePage = () => {
+  const { goTo } = useContext(PageContext);
   return (
     <>
       <div className="homepage-wrap">
