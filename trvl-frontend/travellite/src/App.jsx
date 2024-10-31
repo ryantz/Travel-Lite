@@ -4,6 +4,7 @@ import Base from "./components/base-layout/Base";
 import CheckoutPage from "./components/checkout-page/CheckoutPage";
 import HomePage from "./components/home-page/HomePage";
 import LandingPage from "./components/landing-page/LandingPage";
+import UserProfile from "./components/user-profile/UserProfile";
 
 import { PageContext, PageContextProvider } from "./Context/PageContext";
 const AppContent = () => {
@@ -14,6 +15,7 @@ const AppContent = () => {
       {currentPage === "home" && <HomePage />}
       {currentPage === "landing" && <LandingPage />}
       {currentPage === "checkout" && <CheckoutPage />}
+      {currentPage === "userProf" && <UserProfile />}
     </Base>
   );
 };

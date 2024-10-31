@@ -4,6 +4,7 @@ import "./userBtn.css";
 
 //TODO: replace placeholder username with db pulled one
 const UserBtn = () => {
+  const username = localStorage.getItem("username");
   return (
     <>
       <div className="userbtn-wrap">
@@ -11,6 +12,7 @@ const UserBtn = () => {
           <img src={assets.userIcon} alt="user-icon"></img>
           username
         </button>
+        <button>Logout</button>
       </div>
     </>
   );
