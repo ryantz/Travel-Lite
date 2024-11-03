@@ -71,7 +71,7 @@ img:active {
 .signpage-input-area .signpage-submit {
     width: 50%;
     height: 30%;
-    margin-top: 7%;
+    margin-top: 20%;
     margin-left: 25%;
     border: 0;
     border-radius: 20px;
@@ -93,4 +93,9 @@ img:active {
     padding-left: 15px;
     height: 35px;
     font-size: 1.1em;
+}
+
+.signMessage {
+    color: white;
+    text-align: center;
 }

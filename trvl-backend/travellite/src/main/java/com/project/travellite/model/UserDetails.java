@@ -1,5 +1,6 @@
 package com.project.travellite.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -53,7 +54,7 @@ public class UserDetails {
     private LocalDate cardExp;
 
     @Column(nullable = true)
-    private String cvv;
+    private int cvv;
 
     @OneToOne
     @JoinColumn(name="user_id")

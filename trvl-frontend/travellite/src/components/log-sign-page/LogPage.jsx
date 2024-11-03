@@ -4,8 +4,11 @@ import { PageContext } from "../../Context/PageContext";
 import "./logPage.css";
 import axios from "axios";
 import axiosInstance from "../../api/apiUrl";
-const LogPage = () => {
+import { AuthContext } from "../../Context/AuthContext";
+
+const LogPage = ({ onUserLogin }) => {
   const { goTo } = useContext(PageContext);
+  const { handleUserLogin } = useContext(AuthContext);
   const [close, setClose] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,25 +18,31 @@ const LogPage = () => {
     setClose(true);
   };
 
-  const HandleLogin = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axiosInstance
-      .post("/auth/login", {
-        username,
-        password,
-      })
-      .then(() => {
-        setMessage("Login Successful");
-      })
-      .catch((error) => {
-        setMessage("Login failed" + error.response.data);
-      });
+
+    try {
+      await axiosInstance.post(
+        "/auth/login",
+        { username, password },
+        { withCredentials: true },
+      );
+      setMessage("Login Successfully");
+      localStorage.setItem("username", username);
+      handleUserLogin(true);
+    } catch (error) {
+      if (error.response) {
+        setMessage("Login Failed: " + error.response.data);
+      } else {
+        setMessage("Login failed: " + error.message);
+      }
+    }
   };
 
   return (
     <>
       {close ? null : (
-        <form onSubmit={HandleLogin}>
+        <form onSubmit={handleSubmit}>
           <div className="logpage-wrap">
             <div className="logpage-toprow">
               <button type="button">
@@ -49,12 +58,14 @@ const LogPage = () => {
               <div className="logpage-userpass">
                 <input
                   type="text"
+                  value={username}
                   className="logpage-input"
                   placeholder="Enter username/email"
                   onChange={(e) => setUsername(e.target.value)}
                 ></input>
                 <input
-                  type="text"
+                  type="password"
+                  value={password}
                   className="logpage-input"
                   placeholder="Enter password"
                   onChange={(e) => setPassword(e.target.value)}
@@ -63,7 +74,7 @@ const LogPage = () => {
               <button type="submit" className="logpage-submit">
                 Login
               </button>
-              <p>{message}</p>
+              <p className="post-message">{message}</p>
             </div>
           </div>
         </form>

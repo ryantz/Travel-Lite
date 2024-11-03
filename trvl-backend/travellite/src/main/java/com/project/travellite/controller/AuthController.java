@@ -7,7 +7,9 @@ import com.project.travellite.model.User;
 import com.project.travellite.model.UserDetails;
 import com.project.travellite.repository.UserRepository;
 import com.project.travellite.service.UserService;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,20 +32,13 @@ public class AuthController {
     private UserService userService;
 
     @PostMapping("/auth/signup")
-    public ResponseEntity<String> registerUser(@RequestBody SignupRequest signupRequest) {
+    public ResponseEntity<String> userSignup(@RequestBody SignupRequest signupRequest) {
         if (userRepository.findByUsername(signupRequest.getUsername()) != null) {
             return ResponseEntity.badRequest().body("Username chosen is already taken!");
         } else if (userRepository.findByEmail(signupRequest.getEmail()) != null){
             return ResponseEntity.badRequest().body("Email is already tied to an account!");
         }
-
-        User user = new User();
-        user.setEmail(signupRequest.getEmail());
-        user.setUsername(signupRequest.getUsername());
-        user.setPassword(passwordEncoder.encode(signupRequest.getPassword()));
-        user.setRole(Role.USER);
-
-        userRepository.save(user);
+        userService.registerUser(signupRequest);
         return ResponseEntity.ok("User registered successfully!");
     }
 
@@ -62,9 +57,16 @@ public class AuthController {
     }
 
     @PostMapping("/user/logout")
-    public ResponseEntity<String> userLogout(HttpServletRequest req){
+    public ResponseEntity<String> userLogout(HttpServletRequest req, HttpServletResponse res){
         req.getSession().invalidate();
         SecurityContextHolder.clearContext();
+
+        //remove jsession
+        Cookie cookie = new Cookie("JSESSIONID", null);
+        cookie.setPath("/auth/login");
+        cookie.setHttpOnly(true);
+        cookie.setMaxAge(0);
+        res.addCookie(cookie);
         return ResponseEntity.ok("User logged out successfully!");
     }
 }

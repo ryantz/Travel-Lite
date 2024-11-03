@@ -5,8 +5,10 @@ import CheckoutPage from "./components/checkout-page/CheckoutPage";
 import HomePage from "./components/home-page/HomePage";
 import LandingPage from "./components/landing-page/LandingPage";
 import UserProfile from "./components/user-profile/UserProfile";
+import { AuthContextProvider } from "./Context/AuthContext";
 
 import { PageContext, PageContextProvider } from "./Context/PageContext";
+
 const AppContent = () => {
   const { currentPage } = useContext(PageContext);
 
@@ -19,11 +21,14 @@ const AppContent = () => {
     </Base>
   );
 };
+
 function App() {
   return (
     <div className="App">
       <PageContextProvider>
-        <AppContent />
+        <AuthContextProvider>
+          <AppContent />
+        </AuthContextProvider>
       </PageContextProvider>
     </div>
   );
