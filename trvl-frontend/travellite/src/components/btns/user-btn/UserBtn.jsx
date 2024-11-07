@@ -2,10 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import axiosInstance from "../../../api/apiUrl";
 import { assets } from "../../../assets/assets";
 import { AuthContext } from "../../../Context/AuthContext";
+import { PageContext } from "../../../Context/PageContext";
 import "./userBtn.css";
 
-//TODO: replace placeholder username with db pulled one
+// DONE: replace placeholder username with db pulled one\
+// TODO: route the button click into user details.
+
 const UserBtn = () => {
+  const { goTo } = useContext(PageContext);
   const { handleUserLogin } = useContext(AuthContext);
 
   const username = localStorage.getItem("username");
@@ -21,10 +25,15 @@ const UserBtn = () => {
       console.error(error);
     }
   };
+
   return (
     <>
       <div className="userbtn-wrap">
-        <button className="userbtn" type="submit">
+        <button
+          className="userbtn"
+          type="submit"
+          onClick={() => goTo("userProf")}
+        >
           {username || "try again"}
         </button>
         <button className="logoutbtn" onClick={handleLogout}>
