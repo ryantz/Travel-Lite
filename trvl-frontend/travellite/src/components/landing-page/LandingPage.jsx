@@ -6,6 +6,10 @@ const LandingPage = () => {
   const [tType, settType] = useState(false);
   const [buttonName, setbuttonName] = useState("one-way");
   const { goTo } = useContext(PageContext);
+  const [queryDetails, setQueryDetails] = useState({
+    departureTime: "",
+    destination: "",
+  });
 
   const TripTypeButton = () => {
     const tripHandler = () => {
@@ -44,14 +48,14 @@ const LandingPage = () => {
             <label for="when">When?</label>
             <br></br>
             <input
-              type="date"
+              type="datetime-local"
               className="landingpage-input"
               id="when"
               placeholder="From"
             ></input>
             {tType ? (
               <input
-                type="date"
+                type="datetime-local"
                 className="landingpage-input"
                 id="when2"
                 placeholder="Till"

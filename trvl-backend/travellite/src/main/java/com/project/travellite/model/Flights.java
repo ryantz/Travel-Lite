@@ -40,6 +40,9 @@ public class Flights {
     @Column(nullable = false)
     private double price;
 
+    @Column (nullable = false)
+    private int seat_count;
+
     @Enumerated(EnumType.STRING)
     private FlightType type;
 }

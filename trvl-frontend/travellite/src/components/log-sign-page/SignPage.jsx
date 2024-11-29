@@ -55,14 +55,14 @@ const SignPage = () => {
                   onChange={(e) => setUsername(e.target.value)}
                 ></input>
                 <input
-                  type="text"
+                  type="password"
                   value={password}
                   className="signpage-input"
                   placeholder="Enter password"
                   onChange={(e) => setPassword(e.target.value)}
                 ></input>
                 <input
-                  type="text"
+                  type="password"
                   className="signpage-input"
                   placeholder="Re-enter password"
                 ></input>

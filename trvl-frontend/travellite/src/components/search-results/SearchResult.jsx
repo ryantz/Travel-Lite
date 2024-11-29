@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { PageContext } from "../../Context/PageContext";
 import "./searchResult.css";
+
+// TODO: add backend logic here to display flights
 const SearchResult = () => {
   const { goTo } = useContext(PageContext);
   return (

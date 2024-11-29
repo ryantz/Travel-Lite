@@ -1,5 +1,7 @@
 package com.project.travellite.service;
 
+import com.project.travellite.dto.AddFlightRequest;
+import com.project.travellite.dto.FindFlightsRequest;
 import com.project.travellite.model.Flights;
 import com.project.travellite.repository.FlightRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,16 +22,40 @@ public class FlightService {
         return flightRepo.findAll();
     }
 
-    public Optional<Flights> getFlightByCompany(String company){
+    public List<Optional<Flights>> getFlightByCompany(String company){
         return flightRepo.findByCompany(company);
     }
 
-    public Optional<Flights> getFlightByDepart(LocalDateTime departure){
+    public List<Optional<Flights>> getFlightByDepart(LocalDateTime departure){
         return flightRepo.findByDepartureTime(departure);
     }
 
-    public Optional<Flights> getFlightByDestination(String destination){
+    public List<Optional<Flights>> getFlightByDestination(String destination){
         return flightRepo.findByDestination(destination);
+    }
+
+    public List<Optional<Flights>> getFlightByFlightNumber(String flightNumber){
+        return flightRepo.findByFlightNumber(flightNumber);
+    }
+
+    public Flights addFlight(AddFlightRequest flightReq){
+        Flights flights = new Flights();
+        flights.setFlightNumber(flightReq.getFlightNumber());
+        flights.setCompany(flightReq.getCompany());
+        flights.setOrigin(flightReq.getOrigin());
+        flights.setDestination(flightReq.getDestination());
+        flights.setPrice(flightReq.getPrice());
+        flights.setType(flightReq.getType());
+        flights.setSeat_count(flights.getSeat_count());
+        flights.setArrivalTime(flightReq.getArrivalTime());
+        flights.setDepartureTime(flightReq.getDepartureTime());
+        flightRepo.save(flights);
+
+        return flights;
+    }
+
+    public List<String> getCompanyNames(){
+        return flightRepo.findCompanies();
     }
 }
 
