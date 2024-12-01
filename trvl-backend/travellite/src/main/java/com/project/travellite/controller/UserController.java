@@ -1,6 +1,8 @@
 package com.project.travellite.controller;
 
+import com.project.travellite.dto.AddPDRequest;
 import com.project.travellite.dto.AddUDRequest;
+import com.project.travellite.dto.PaymentDReponse;
 import com.project.travellite.dto.UserDResponse;
 import com.project.travellite.model.User;
 import com.project.travellite.model.UserDetails;
@@ -64,5 +66,9 @@ public class UserController {
     @PostMapping("/{username}/details")
     public ResponseEntity<UserDResponse> addUserDetails(@PathVariable String username, @RequestBody AddUDRequest udRequest){
         return ResponseEntity.ok(userService.addDetails(username, udRequest));
+    }
+    @PostMapping("/{username}/payment")
+    public ResponseEntity<PaymentDReponse> addPayDetails(@PathVariable String username, @RequestBody AddPDRequest pdRequest){
+        return ResponseEntity.ok(userService.addPayDetails(username, pdRequest));
     }
 }

@@ -1,11 +1,11 @@
 package com.project.travellite.service;
 
-import com.project.travellite.dto.AddUDRequest;
-import com.project.travellite.dto.SignupRequest;
-import com.project.travellite.dto.UserDResponse;
+import com.project.travellite.dto.*;
+import com.project.travellite.model.PaymentDetails;
 import com.project.travellite.model.Role;
 import com.project.travellite.model.User;
 import com.project.travellite.model.UserDetails;
+import com.project.travellite.repository.PaymentDetailRepository;
 import com.project.travellite.repository.UserDetailRepository;
 import com.project.travellite.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,10 @@ public class UserService {
     @Autowired
     private UserDetailRepository userDetRepo;
     @Autowired
+    private PaymentDetailRepository payDetRepo;
+    @Autowired
     private PasswordEncoder passwordEncoder;
+
 
     public User getUserByUsername(String username){
         return userRepo.findByUsername(username);
@@ -99,10 +102,6 @@ public class UserService {
         userD.setPassNum(udRequest.getPassNum());
         userD.setPassIss(udRequest.getPassIss());
         userD.setPassExp(udRequest.getPassExp());
-        userD.setCardName(udRequest.getCardName());
-        userD.setCardNum(udRequest.getCardNum());
-        userD.setCardExp(udRequest.getCardExp());
-        userD.setCvv(udRequest.getCvv());
         userDetRepo.save(userD);
 
         UserDResponse userDResponse = new UserDResponse();
@@ -114,11 +113,25 @@ public class UserService {
         userDResponse.setPassNum(userD.getPassNum());
         userDResponse.setPassIss(userD.getPassIss());
         userDResponse.setPassExp(userD.getPassExp());
-        userDResponse.setCardName(userD.getCardName());
-        userDResponse.setCardNum(userD.getCardNum());
-        userDResponse.setCardExp(userD.getCardExp());
-        userDResponse.setCvv(userD.getCvv());
 
         return userDResponse;
+    }
+
+    public PaymentDReponse addPayDetails(String username, AddPDRequest pdRequest){
+        User user = getUserByUsername(username);
+        PaymentDetails paymentD = new PaymentDetails();
+        paymentD.setCardName(pdRequest.getCardName());
+        paymentD.setCardNum(pdRequest.getCardNum());
+        paymentD.setCardExp(pdRequest.getCardExp());
+        paymentD.setCvv(pdRequest.getCvv());
+        payDetRepo.save(paymentD);
+
+        PaymentDReponse paymentDResponse = new PaymentDReponse();
+        paymentDResponse.setCardName(paymentD.getCardName());
+        paymentDResponse.setCardNum(paymentD.getCardNum());
+        paymentDResponse.setCardExp(paymentD.getCardExp());
+        paymentDResponse.setCvv(paymentD.getCvv());
+
+        return paymentDResponse;
     }
 }

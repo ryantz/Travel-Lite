@@ -18,8 +18,5 @@ public class UserDResponse {
     private String passNum;
     private LocalDate passIss;
     private LocalDate passExp;
-    private String cardName;
-    private String cardNum;
-    private LocalDate cardExp;
-    private int cvv;
+
 }

@@ -8,8 +8,6 @@ const FilterComp = ({ value }) => {
         {value}
         <div className="select-wrap">
           <select></select>
-          <select></select>
-          <select></select>
         </div>
       </div>
     </>

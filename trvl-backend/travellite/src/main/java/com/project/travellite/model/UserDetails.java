@@ -44,17 +44,7 @@ public class UserDetails {
     @Column(nullable = true)
     private LocalDate passExp;
 
-    @Column(nullable = true)
-    private String cardName;
 
-    @Column(nullable = true)
-    private String cardNum;
-
-    @Column(nullable = true)
-    private LocalDate cardExp;
-
-    @Column(nullable = true)
-    private int cvv;
 
     @OneToOne
     @JoinColumn(name="user_id")
