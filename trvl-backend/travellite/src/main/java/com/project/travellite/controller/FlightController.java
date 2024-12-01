@@ -54,9 +54,4 @@ public class FlightController {
     public List<String> getAllCompanies(){
         return flightServ.getCompanyNames();
     }
-
-    @GetMapping("find/query")
-    public List<Optional<Flights>> getByQuery(FindFlightsRequest ffr){
-
-    }
 }

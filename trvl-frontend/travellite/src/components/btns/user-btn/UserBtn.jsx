@@ -36,7 +36,13 @@ const UserBtn = () => {
         >
           {username || "try again"}
         </button>
-        <button className="logoutbtn" onClick={handleLogout}>
+        <button
+          className="logoutbtn"
+          onClick={() => {
+            handleLogout();
+            goTo("landing");
+          }}
+        >
           Logout
         </button>
       </div>
