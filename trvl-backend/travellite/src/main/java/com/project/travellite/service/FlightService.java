@@ -1,13 +1,13 @@
 package com.project.travellite.service;
 
 import com.project.travellite.dto.AddFlightRequest;
-import com.project.travellite.dto.FindFlightsRequest;
 import com.project.travellite.model.Flights;
 import com.project.travellite.repository.FlightRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -46,7 +46,7 @@ public class FlightService {
         flights.setDestination(flightReq.getDestination());
         flights.setPrice(flightReq.getPrice());
         flights.setType(flightReq.getType());
-        flights.setSeat_count(flights.getSeat_count());
+        flights.setSeatCount(flightReq.getSeatCount());
         flights.setArrivalTime(flightReq.getArrivalTime());
         flights.setDepartureTime(flightReq.getDepartureTime());
         flightRepo.save(flights);
@@ -56,6 +56,10 @@ public class FlightService {
 
     public List<String> getCompanyNames(){
         return flightRepo.findCompanies();
+    }
+
+    public List<Flights> findFlightsByLandingPage(LocalDate departureDate, String origin, String destination){
+       return flightRepo.findFlightsFromLandingPage(departureDate, origin, destination);
     }
 }
 

@@ -9,7 +9,9 @@ import java.time.LocalDateTime;
 @Data
 @Getter
 @Setter
-public class FindFlightsRequest {
+public class SearchFlightRequest {
+    private int pax;
     private LocalDateTime departureTime;
-    private String Destination;
+    private String destination;
+    private String origin;
 }

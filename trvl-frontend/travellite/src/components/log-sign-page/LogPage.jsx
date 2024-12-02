@@ -6,17 +6,13 @@ import axios from "axios";
 import axiosInstance from "../../api/apiUrl";
 import { AuthContext } from "../../Context/AuthContext";
 
-const LogPage = ({ onUserLogin }) => {
+const LogPage = ({ onClose }) => {
   const { goTo } = useContext(PageContext);
   const { handleUserLogin } = useContext(AuthContext);
   const [close, setClose] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
-  const closeHandler = () => {
-    setClose(true);
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,7 +45,7 @@ const LogPage = ({ onUserLogin }) => {
                 <img
                   src={assets.closeWindowIcon}
                   alt="closeWindow"
-                  onClick={closeHandler}
+                  onClick={onClose}
                 ></img>
               </button>
             </div>

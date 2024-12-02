@@ -1,5 +1,6 @@
 package com.project.travellite.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -40,8 +41,9 @@ public class Flights {
     @Column(nullable = false)
     private double price;
 
-    @Column (nullable = false)
-    private int seat_count;
+    @JsonProperty("seatCount")
+    @Column(nullable = false)
+    private int seatCount;
 
     @Enumerated(EnumType.STRING)
     private FlightType type;

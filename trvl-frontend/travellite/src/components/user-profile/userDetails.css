@@ -63,3 +63,8 @@ option[value=""][disabled] {
 .up-pinfo .pass-info {
     width: 50%;
 }
+
+.userDet-submit {
+    width: 30%;
+    height: 50%;
+}

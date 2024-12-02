@@ -1,67 +1,67 @@
 #cos-title {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 2.5em;
-    padding-top: 20px;
-    padding-left: 3%;
-    margin-top: 0;
-    margin-bottom: 1%;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding-top: 20px;
+  padding-left: 3%;
+  margin-top: 0;
+  margin-bottom: 1%;
 }
 
 .cos-container {
-    display: flex;
-    width: 100%;
-    height: 70%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
 }
 
 .cos-container .cos-planebody {
-    width: 90%;
-    height: 70%;
-    display: flex;
-    background-color: #757575;
-    border-top-left-radius: 20% 40%;
-    border-bottom-left-radius: 20% 40%;
-    border-top-right-radius: 20% 40%;
-    border-bottom-right-radius: 20% 40%;
+  width: 90%;
+  height: 70%;
+  display: flex;
+  background-color: #757575;
+  border-top-left-radius: 20% 40%;
+  border-bottom-left-radius: 20% 40%;
+  border-top-right-radius: 20% 40%;
+  border-bottom-right-radius: 20% 40%;
 }
 
 .cos-planebody .cos-e {
-    display: flex;
-    margin-left: 17%;
-    width: 50%;
-    height: 100%;
+  display: flex;
+  margin-left: 17%;
+  width: 90%;
+  height: 100%;
 }
 
 .cos-planebody .cos-b {
-    display: flex;
-    width: 20%;
-    height: 100%;
+  display: flex;
+  width: 20%;
+  height: 100%;
 }
 
 .cos-submit {
-    width: 95%;
-    display: flex;
-    justify-content: flex-end;
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .cos-submit .cos-proceed {
-    border: 0;
-    width: 15%;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 1.2em;
-    background-color: #757575;
-    color: #ffffff;
+  border: 0;
+  width: 15%;
+  padding: 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.2em;
+  background-color: #757575;
+  color: #ffffff;
 }
 
 .cos-proceed:hover {
-    background-color: #606060;
+  background-color: #606060;
 }
 
 .cos-proceed:active {
-    background-color: #14ae5c;
-    color: #000000;
+  background-color: #14ae5c;
+  color: #000000;
 }

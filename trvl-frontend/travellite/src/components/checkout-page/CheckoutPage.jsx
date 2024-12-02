@@ -3,6 +3,7 @@ import {
     ComponentContext,
     ComponentContextProvider,
 } from "../../Context/ComponentContext";
+import { SeatProvider } from "../../Context/SeatContext";
 import CheckoutBase from "./CheckoutBase";
 import COClass from "./COClass";
 import COPay from "./COPay";
@@ -25,7 +26,9 @@ const CheckoutPageDetails = () => {
 const CheckoutPage = () => {
     return (
         <ComponentContextProvider>
-            <CheckoutPageDetails />
+            <SeatProvider>
+                <CheckoutPageDetails />
+            </SeatProvider>
         </ComponentContextProvider>
     );
 };

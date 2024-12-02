@@ -1,10 +1,9 @@
 package com.project.travellite.controller;
 
 import com.project.travellite.dto.AddFlightRequest;
-import com.project.travellite.dto.FindFlightsRequest;
+import com.project.travellite.dto.SearchFlightRequest;
 import com.project.travellite.model.Flights;
 import com.project.travellite.service.FlightService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -53,5 +52,12 @@ public class FlightController {
     @GetMapping("/find/company")
     public List<String> getAllCompanies(){
         return flightServ.getCompanyNames();
+    }
+
+    @PostMapping("/landingSearch")
+    public ResponseEntity<List<Flights>> searchByLanding(@RequestBody SearchFlightRequest sfr){
+        LocalDate departureDate = sfr.getDepartureTime().toLocalDate();
+        List<Flights> flights = flightServ.findFlightsByLandingPage(departureDate, sfr.getOrigin(), sfr.getDestination());
+        return ResponseEntity.ok(flights);
     }
 }

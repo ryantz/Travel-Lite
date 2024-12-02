@@ -18,6 +18,6 @@ public class AddFlightRequest {
     private String origin;
     private String destination;
     private double price;
-    private int seat_count;
+    private int seatCount;
     private FlightType type;
 }

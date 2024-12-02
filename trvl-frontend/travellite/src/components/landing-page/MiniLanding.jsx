@@ -1,8 +1,16 @@
 import React, { useState } from "react";
-import "./miniLanding.css";
-const MiniLanding = () => {
+import "./miniLanding.css"; // You should already have styles
+import axiosInstance from "../../api/apiUrl"; // Same axios call as in LandingPage
+
+const MiniLanding = ({ onSearchResults }) => {
   const [tType, settType] = useState(false);
   const [buttonName, setbuttonName] = useState("one-way");
+  const [queryDetails, setQueryDetails] = useState({
+    departureTime: "",
+    destination: "",
+    origin: "",
+    pax: "",
+  });
 
   const MiniTripTypeButton = () => {
     const tripHandler = () => {
@@ -16,17 +24,41 @@ const MiniLanding = () => {
     );
   };
 
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    setQueryDetails((prevDetails) => ({
+      ...prevDetails,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await axiosInstance.post(
+        "/public/flights/landingSearch",
+        queryDetails,
+      );
+      if (typeof onSearchResults === "function") {
+        onSearchResults(response.data);
+      } else {
+        console.error("onSearchResults is not a function");
+      }
+    } catch (error) {
+      console.error("Error fetching flight data", error);
+    }
+  };
+
   return (
     <>
       <div className="minilanding-wrap">
         <div className="minilanding-input-wrap">
           <div className="minilanding-who">
-            <label for="miniwho">Who?</label>
-            <br></br>
+            <label htmlFor="miniwho">Who?</label>
+            <br />
             <select
               className="minilanding-input"
-              id="miniwho"
-              placeholder="Pax"
+              id="pax"
+              onChange={handleChange}
             >
               <option value="" disabled selected>
                 Pax
@@ -39,43 +71,48 @@ const MiniLanding = () => {
             </select>
           </div>
           <div className="minilanding-when">
-            <label for="miniwhen">When?</label>
-            <br></br>
+            <label htmlFor="miniwhen">When?</label>
+            <br />
             <input
-              type="date"
+              type="datetime-local"
               className="minilanding-input"
-              id="miniwhen"
-              placeholder="From"
-            ></input>
-            {tType ? (
+              id="departureTime"
+              onChange={handleChange}
+            />
+            {tType && (
               <input
-                type="date"
+                type="datetime-local"
                 className="minilanding-input"
-                id="miniwhen2"
-                placeholder="Till"
-              ></input>
-            ) : null}
+                id="returnTime"
+                onChange={handleChange}
+              />
+            )}
           </div>
           <div className="minilanding-where">
-            <label for="miniwhere">Where?</label>
-            <br></br>
+            <label htmlFor="miniwhere">Where?</label>
             <input
               type="text"
               className="minilanding-input"
-              id="miniwhere"
+              id="origin"
+              onChange={handleChange}
               placeholder="Origin"
-            ></input>
-            <br></br>
+            />
             <input
               type="text"
               className="minilanding-input"
-              id="miniwhere2"
+              id="destination"
+              onChange={handleChange}
               placeholder="Destination"
-            ></input>
+            />
           </div>
+
           <div className="minilanding-submit-wrap">
             <MiniTripTypeButton />
-            <button className="minilanding-submit" type="submit">
+            <button
+              className="minilanding-submit"
+              type="submit"
+              onClick={handleSubmit}
+            >
               Show me How!
             </button>
           </div>

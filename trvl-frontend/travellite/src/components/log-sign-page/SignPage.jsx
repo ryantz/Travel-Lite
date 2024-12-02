@@ -3,7 +3,7 @@ import axiosInstance from "../../api/apiUrl";
 import { assets } from "../../assets/assets";
 import "./signPage.css";
 
-const SignPage = () => {
+const SignPage = ({ onClose }) => {
   const [close, setClose] = useState(false);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -24,16 +24,13 @@ const SignPage = () => {
       }
     }
   };
-  const closeHandler = () => {
-    setClose(true);
-  };
   return (
     <>
       {close ? null : (
         <form onSubmit={handleSignup}>
           <div className="signpage-wrap">
             <div className="signpage-toprow">
-              <button type="button" onClick={closeHandler}>
+              <button type="button" onClick={onClose}>
                 <img src={assets.closeWindowIcon} alt="closeWindow"></img>
               </button>
             </div>
