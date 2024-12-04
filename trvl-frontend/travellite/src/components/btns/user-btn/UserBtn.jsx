@@ -11,8 +11,24 @@ import "./userBtn.css";
 const UserBtn = () => {
   const { goTo } = useContext(PageContext);
   const { handleUserLogin } = useContext(AuthContext);
+  const [role, setRole] = useState("");
 
   const username = localStorage.getItem("username");
+
+  useEffect(() => {
+    const fetchUserRole = async () => {
+      try {
+        const res = await axiosInstance.get(`/user/${username}`);
+        setRole(res.data.role);
+      } catch (error) {
+        console.error("Failed to fetch user role:", error);
+      }
+    };
+
+    if (username) {
+      fetchUserRole();
+    }
+  }, [username]);
 
   const handleLogout = async () => {
     try {
@@ -26,14 +42,18 @@ const UserBtn = () => {
     }
   };
 
+  const handleButtonClick = () => {
+    if (role === "ADMIN") {
+      goTo("adminPage");
+    } else {
+      goTo("userProf");
+    }
+  };
+
   return (
     <>
       <div className="userbtn-wrap">
-        <button
-          className="userbtn"
-          type="submit"
-          onClick={() => goTo("userProf")}
-        >
+        <button className="userbtn" type="submit" onClick={handleButtonClick}>
           {username || "try again"}
         </button>
         <button

@@ -2,6 +2,7 @@ package com.project.travellite.controller;
 
 import com.project.travellite.dto.AddFlightRequest;
 import com.project.travellite.dto.SearchFlightRequest;
+import com.project.travellite.model.FlightType;
 import com.project.travellite.model.Flights;
 import com.project.travellite.service.FlightService;
 import lombok.RequiredArgsConstructor;
@@ -22,8 +23,9 @@ public class FlightController {
     private FlightService flightServ;
 
     @GetMapping("/find")
-    public List<Flights> getAll(){
-        return flightServ.getAllFlights();
+    public ResponseEntity<List<Flights>> getAll(){
+        List<Flights> flights = flightServ.getAllFlights();
+        return ResponseEntity.ok(flights);
     }
 
     @GetMapping("/find/company/{company}")
@@ -59,5 +61,15 @@ public class FlightController {
         LocalDate departureDate = sfr.getDepartureTime().toLocalDate();
         List<Flights> flights = flightServ.findFlightsByLandingPage(departureDate, sfr.getOrigin(), sfr.getDestination());
         return ResponseEntity.ok(flights);
+    }
+
+    @GetMapping("/types")
+    public FlightType[] getFlightTypes() {
+        return FlightType.values();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Flights> getFlightsById(@PathVariable Long id){
+        return flightServ.getFlightById(id);
     }
 }

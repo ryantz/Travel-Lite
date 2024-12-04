@@ -4,6 +4,7 @@ import com.project.travellite.dto.AddPDRequest;
 import com.project.travellite.dto.AddUDRequest;
 import com.project.travellite.dto.PaymentDReponse;
 import com.project.travellite.dto.UserDResponse;
+import com.project.travellite.model.PaymentDetails;
 import com.project.travellite.model.User;
 import com.project.travellite.model.UserDetails;
 import com.project.travellite.service.UserService;
@@ -65,10 +66,33 @@ public class UserController {
 
     @PostMapping("/{username}/details")
     public ResponseEntity<UserDResponse> addUserDetails(@PathVariable String username, @RequestBody AddUDRequest udRequest){
-        return ResponseEntity.ok(userService.addDetails(username, udRequest));
+        return ResponseEntity.ok(userService.addOrUpdateDetails(username, udRequest));
     }
+
+    @PatchMapping("/{username}/details")
+    public ResponseEntity<UserDResponse> saveOrUpdateUserDetails(
+            @PathVariable String username,
+            @RequestBody AddUDRequest udRequest) {
+        return ResponseEntity.ok(userService.addOrUpdateDetails(username, udRequest));
+    }
+
+    @GetMapping("/{username}/payment")
+    public ResponseEntity<PaymentDetails> getPaymentByUsername(@PathVariable String username){
+        if(userService.getUserByUsername(username) != null) {
+            return ResponseEntity.ok(userService.getPDetailsByUsername(username));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
     @PostMapping("/{username}/payment")
     public ResponseEntity<PaymentDReponse> addPayDetails(@PathVariable String username, @RequestBody AddPDRequest pdRequest){
-        return ResponseEntity.ok(userService.addPayDetails(username, pdRequest));
+        return ResponseEntity.ok(userService.addOrUpdatePayDetails(username, pdRequest));
+    }
+
+    @PatchMapping("/{username}/payment")
+    public ResponseEntity<PaymentDReponse> saveOrUpdatePaymentDetails(
+            @PathVariable String username,
+            @RequestBody AddPDRequest pdRequest){
+        return ResponseEntity.ok(userService.addOrUpdatePayDetails(username, pdRequest));
     }
 }

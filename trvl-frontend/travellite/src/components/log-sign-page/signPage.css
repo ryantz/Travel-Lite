@@ -63,15 +63,11 @@ img:active {
 .signpage-input-area .signpage-userpass {
     margin-left: 10%;
     width: 80%;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 25%;
 }
 
 .signpage-input-area .signpage-submit {
     width: 50%;
     height: 30%;
-    margin-top: 20%;
     margin-left: 25%;
     border: 0;
     border-radius: 20px;
@@ -101,4 +97,19 @@ img:active {
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 10px;
+    /* Adds space between inputs */
+}
+
+.error-message {
+    color: red;
+    font-size: 0.7em;
+    margin-top: 2px;
+    font-weight: bold;
 }

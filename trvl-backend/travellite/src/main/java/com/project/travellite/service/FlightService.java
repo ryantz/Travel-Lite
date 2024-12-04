@@ -21,7 +21,9 @@ public class FlightService {
     public List<Flights> getAllFlights(){
         return flightRepo.findAll();
     }
-
+    public Optional<Flights> getFlightById(Long id){
+        return flightRepo.findById(id);
+    }
     public List<Optional<Flights>> getFlightByCompany(String company){
         return flightRepo.findByCompany(company);
     }

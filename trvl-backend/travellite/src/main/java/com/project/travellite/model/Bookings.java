@@ -27,6 +27,10 @@ public class Bookings {
     @JoinColumn(name="flight_id", nullable = false)
     private Flights flights;
 
+    @ManyToOne
+    @JoinColumn(name="payment_id", nullable = false)
+    private PaymentDetails payment;
+
     @Column(name="bookingDate", nullable = false)
     private LocalDateTime bookingDate;
 

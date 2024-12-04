@@ -5,6 +5,17 @@
     gap: 20px;
 }
 
+.edit-btn {
+    margin-bottom: 50px;
+}
+
+.eBtn {
+    height: 150%;
+    width: 100px;
+    border: 0;
+    border-radius: 20px;
+}
+
 .editDetails {
     width: 15%;
     height: 40%;
@@ -67,4 +78,12 @@ option[value=""][disabled] {
 .userDet-submit {
     width: 30%;
     height: 50%;
+}
+
+.signMessage {
+    margin-top: 0;
+    color: #14ae5c;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.4em;
 }

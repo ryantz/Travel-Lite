@@ -31,5 +31,4 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonIgnore
     private UserDetails userDetails;
-
 }

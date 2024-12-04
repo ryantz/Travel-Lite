@@ -37,13 +37,89 @@
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     margin-left: 30px;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .up-prev .up-prevd {
     height: 80%;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-items: center;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding-right: 10px;
+    gap: 4%;
+}
+
+.up-prev .up-prevd::-webkit-scrollbar {
+    width: 8px;
+}
+
+.up-prev .up-prevd::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.up-prev .up-prevd::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.up-prev .up-prevd::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.up-booking {
+    background-color: black;
+    width: 90%;
+    height: 30%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 4%;
+    text-align: center;
+    min-height: 30%;
+    max-height: 30%;
+    flex-shrink: 0;
+}
+
+.up-fcompany {
+    background-color: #757575;
+    width: 23%;
+    height: 80%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.up-details {
+    background-color: #757575;
+    width: 50%;
+    height: 80%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.up-status {
+    background-color: #757575;
+    width: 20%;
+    height: 80%;
+    border-radius: 20px;
+    font-size: 1.3em;
+    font-weight: bolder;
+    color: #14ae5c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }

@@ -86,14 +86,27 @@ public class UserService {
         return null;
     }
 
+    public PaymentDetails getPDetailsByUsername(String username){
+        User user = userRepo.findByUsername(username);
+        if(user != null){
+            return payDetRepo.findByUserId(user.getId());
+        }
+        return null;
+    }
+
     public boolean verifyPassword(String rawPass, String hashPass){
         return passwordEncoder.matches(rawPass, hashPass);
     }
 
-    public UserDResponse addDetails(String username, AddUDRequest udRequest){
+    public UserDResponse addOrUpdateDetails(String username, AddUDRequest udRequest){
         User user = getUserByUsername(username);
-        UserDetails userD = new UserDetails();
-        userD.setUser(user);
+        UserDetails userD = userDetRepo.findByUserId(user.getId());
+
+        if(userD == null){
+            userD = new UserDetails();
+            userD.setUser(user);
+        }
+
         userD.setFirstName(udRequest.getFirstName());
         userD.setLastName(udRequest.getLastName());
         userD.setGender(udRequest.getGender());
@@ -117,21 +130,27 @@ public class UserService {
         return userDResponse;
     }
 
-    public PaymentDReponse addPayDetails(String username, AddPDRequest pdRequest){
+    public PaymentDReponse addOrUpdatePayDetails(String username, AddPDRequest pdRequest){
         User user = getUserByUsername(username);
-        PaymentDetails paymentD = new PaymentDetails();
-        paymentD.setCardName(pdRequest.getCardName());
-        paymentD.setCardNum(pdRequest.getCardNum());
-        paymentD.setCardExp(pdRequest.getCardExp());
-        paymentD.setCvv(pdRequest.getCvv());
-        payDetRepo.save(paymentD);
+        PaymentDetails payD = payDetRepo.findByUserId(user.getId());
 
-        PaymentDReponse paymentDResponse = new PaymentDReponse();
-        paymentDResponse.setCardName(paymentD.getCardName());
-        paymentDResponse.setCardNum(paymentD.getCardNum());
-        paymentDResponse.setCardExp(paymentD.getCardExp());
-        paymentDResponse.setCvv(paymentD.getCvv());
+        if(payD == null){
+            payD = new PaymentDetails();
+            payD.setUser(user);
+        }
 
-        return paymentDResponse;
+        payD.setCardNum(pdRequest.getCardNum());
+        payD.setCardName(pdRequest.getCardName());
+        payD.setCvv(pdRequest.getCvv());
+        payD.setCardExp(pdRequest.getCardExp());
+        payDetRepo.save(payD);
+
+        PaymentDReponse pDResponse = new PaymentDReponse();
+        pDResponse.setCardNum(payD.getCardNum());
+        pDResponse.setCardName(payD.getCardName());
+        pDResponse.setCvv(payD.getCvv());
+        pDResponse.setCardExp(payD.getCardExp());
+        return pDResponse;
     }
+
 }

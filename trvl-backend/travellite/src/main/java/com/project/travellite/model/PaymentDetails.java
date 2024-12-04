@@ -18,19 +18,19 @@ public class PaymentDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String cardName;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String cardNum;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private LocalDate cardExp;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int cvv;
 
-    @ManyToOne
-    @JoinColumn(name="userD_id", nullable = false)
-    private UserDetails userDetails;
+    @OneToOne
+    @JoinColumn(name="user_id")
+    private User user;
 }

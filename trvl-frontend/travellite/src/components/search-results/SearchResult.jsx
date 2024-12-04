@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import axiosInstance from "../../api/apiUrl";
 import { PageContext } from "../../Context/PageContext";
 import { useSelectedFlight } from "../../Context/SelectedFlightContext";
 import "./searchResult.css";
